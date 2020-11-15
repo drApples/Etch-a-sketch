@@ -1,0 +1,29 @@
+body{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+main{
+    width: 100%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.gridContainer{
+    display: grid;
+    grid-template-columns: repeat(16, 1fr);
+    grid-template-rows: repeat(16, 1fr);
+    height: 70vh;
+    width: 70vh;
+    border: none;
+}
+
+.gridContainer:hover{
+    cursor: url(pen.cur) 0 24, auto;
+}
