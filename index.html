@@ -1,12 +1,43 @@
 <html>
-    <head>
-        <meta charset="UTF-8" lang="eng">
-        <link href="style.css" rel="stylesheet">
-    </head>
-    <body>
-        <main>
-            <div class="gridContainer"></div>
-        </main>
-        <script src="script.js"></script>
-    </body>
+
+<head>
+    <meta charset="UTF-8" lang="eng">
+    <link href="style.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+    <title>Etch a sketch</title>
+</head>
+
+<body>
+    <h1>Etch a sketch!</h1>
+    <main>
+        <div class="settings">
+            <h2>Settings: </h2>
+            <div class="rangeElement">
+                <p id="sizeInfo">Size: 16</p>
+                <input autocomplete="off" type="range" id="gridSize" min="1" max="100" value="16">
+                <div class="minMax">
+                    <div class="minLeft">1</div>
+                    <div class="maxRight">100</div>
+                </div>
+            </div>
+            <div id="gridMode">
+                <input autocomplete="off" type="radio" id="blackWhite" name="mode" value="blackWhite" checked>
+                <label for="blackWhite">Black and White</label>
+                <input autocomplete="off" type="radio" id="rainbow" name="mode" value="rainbow">
+                <label for="rainbow">Rainbow</label>
+                <input autocomplete="off" type="radio" id="pink" name="mode" value="pink">
+                <label for="pink">Pink</label>
+            </div>
+            <div class="resetOptions">
+                <button id="resetButton">Reset grid</button>
+                <input autocomplete="off" type="checkbox" id="cellBorders" name="borders" checked>
+                <label for="borders">Cell borders</label>
+            </div>
+        </div>
+        <div class="gridContainer"></div>
+    </main>
+    <script src="script.js"></script>
+</body>
+
 </html>

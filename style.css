@@ -1,19 +1,30 @@
+
 body{
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     margin: 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
+    color: black;
+    font-family: 'Dancing Script', cursive;
+    background: linear-gradient(rgb(30, 28, 32),rgb(117, 117, 117));
+    color: rgb(235, 225, 210);
+}
+
+h1{
+    margin-top: 3%;
+    font-size: 300%;
 }
 
 main{
     width: 100%;
     height: 90%;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    flex-direction: row;
+    justify-content: start;
+    margin-top: 3%;
 }
 .gridContainer{
     display: grid;
@@ -21,9 +32,81 @@ main{
     grid-template-rows: repeat(16, 1fr);
     height: 70vh;
     width: 70vh;
-    border: none;
+    border: 1.5vh solid ;
 }
 
 .gridContainer:hover{
-    cursor: url(pen.cur) 0 24, auto;
+    cursor: url(pen.png) 0 20, auto;
+}
+
+button{
+    border: none;
+    background-color: rgb(30, 28, 32);
+    color: rgb(235, 225, 210);
+    font-family: 'Dancing Script', cursive;
+    margin-right: 5%;
+    font-size: 80%;
+}
+
+button:hover{
+    cursor: pointer;
+}
+
+.settings{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 60%;
+    width: 20%;
+    margin-left: 5%;
+    margin-right: 10%;
+    font-size: 150%;
+}
+
+#sizeInfo{
+    margin-bottom: 0;
+    margin-top: 12%;
+}
+.minMax{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.rangeElement {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#gridSize{
+    width: 100%;
+}
+
+#gridMode{
+    margin-top: 12%;
+}
+
+.resetOptions{
+    display: flex;
+    justify-content: center;
+    margin-top: 12%;
+    width: 100%;
+    text-align: center;
+}
+
+label{
+    padding: auto;
+}
+
+@media (orientation: portrait){
+    .gridContainer{
+        height: 75vw;
+        width: 75vw;
+    }
+    main{
+        flex-direction: column;
+    }
 }
