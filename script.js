@@ -26,6 +26,7 @@ function creategrid(gridSize) {
 }
 
 function changeGrid(gridSize) {
+    cellBorders.checked = true;
     gridContainer.setAttribute('style', `grid-template-columns: repeat(${gridSize}, 1fr); grid-template-rows: repeat(${gridSize}, 1fr)`);
     destroyGrid();
     creategrid(gridSize);
