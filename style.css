@@ -30,6 +30,8 @@ main{
     display: grid;
     grid-template-columns: repeat(16, 1fr);
     grid-template-rows: repeat(16, 1fr);
+    background-color: white;
+    padding: 0;
     height: 70vh;
     width: 70vh;
     border: 1.5vh solid ;

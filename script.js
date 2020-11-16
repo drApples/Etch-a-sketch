@@ -19,7 +19,7 @@ function creategrid(gridSize) {
         cell.setAttribute('class', 'cell');
         cell.setAttribute('data-gradient', '100');
         cell.addEventListener('mouseenter', mode);
-        cell.setAttribute('style', 'background-color: white; border-style: solid; border-color: black; border-width: ' + cellBorder(i, gridSize, cell));
+        cell.setAttribute('style', 'border-style: solid; border-color: black; border-width: ' + cellBorder(i, gridSize, cell));
         gridContainer.appendChild(cell);
     }
     cells = document.querySelectorAll('.cell');
