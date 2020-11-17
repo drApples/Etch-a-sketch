@@ -33,7 +33,7 @@ function changeGrid(gridSize) {
 function getInput() {
     inputSize.addEventListener('input', e => {
         changeGrid(+e.target.value);
-        sizeInfo.innerText = e.target.value;
+        sizeInfo.innerText = 'Size: ' + e.target.value;
     })
 
     rainbowMode.addEventListener('change', () => setMode(rainbow));
