@@ -17,16 +17,14 @@ function creategrid(gridSize) {
     for (let i = 1; i <= gridSize ** 2; i++) {
         let cell = document.createElement('div');
         cell.setAttribute('class', 'cell');
-        cell.setAttribute('data-gradient', '100');
         cell.addEventListener('mouseenter', mode);
-        cell.setAttribute('style', 'border-style: solid; border-color: black; border-width: ' + cellBorder(i, gridSize, cell));
         gridContainer.appendChild(cell);
     }
-    cells = document.querySelectorAll('.cell');
+
 }
 
 function changeGrid(gridSize) {
-    cellBorders.checked = true;
+    cellBorders.checked = false;
     gridContainer.setAttribute('style', `grid-template-columns: repeat(${gridSize}, 1fr); grid-template-rows: repeat(${gridSize}, 1fr)`);
     destroyGrid();
     creategrid(gridSize);
@@ -52,19 +50,22 @@ function destroyGrid() {
 }
 
 function resetGrid() {
+    cells = document.querySelectorAll('.cell');
     cells.forEach(cell => cell.style.backgroundColor = 'white');
 }
 
 function setBorders(e) {
+    let cells = document.getElementsByClassName('cell');
     if(e.target.checked){
-       let cells = document.getElementsByClassName('cell');
        for(let i = 0; i<cells.length; i++){
         cells[i].style.border = '1px solid black';
         cells[i].style.borderWidth = cellBorder(i+1, Math.sqrt(cells.length));
     }
 }
     else{
-        cells.forEach(cell => cell.style.border = 'none');
+        for(let i = 0; i<cells.length; i++){
+            cells[i].style.border= 'none';
+        }
     }
 }
 
@@ -82,6 +83,9 @@ function rainbow(e) {
 }
 
 function pink(e) {
+    if(e.target.dataset.gradient === undefined){
+        e.target.dataset.gradient = '100';
+    }
     if(+e.target.dataset.gradient !== 0){
         e.target.style.backgroundColor = `hsl(319, 39%, ${e.target.dataset.gradient - 10}%)`;
         e.target.dataset.gradient = e.target.dataset.gradient - 10;
@@ -89,6 +93,7 @@ function pink(e) {
 }
 
 function setMode(chosenMode) {
+    cells = document.querySelectorAll('.cell');
     cells.forEach(
         cell => {
             cell.removeEventListener('mouseenter', mode);
