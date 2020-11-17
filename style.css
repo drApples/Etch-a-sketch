@@ -103,6 +103,10 @@ label{
     padding: auto;
 }
 
+input{
+    cursor: pointer;
+}
+
 @media (orientation: portrait){
     .gridContainer{
         height: 75vw;
