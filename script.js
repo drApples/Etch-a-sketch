@@ -83,13 +83,11 @@ function rainbow(e) {
 }
 
 function pink(e) {
-    if(e.target.dataset.gradient === undefined){
+    if(e.target.dataset.gradient === undefined || +e.target.dataset.gradient === 0){
         e.target.dataset.gradient = '100';
     }
-    if(+e.target.dataset.gradient !== 0){
         e.target.style.backgroundColor = `hsl(319, 39%, ${e.target.dataset.gradient - 10}%)`;
         e.target.dataset.gradient = e.target.dataset.gradient - 10;
-    }
 }
 
 function setMode(chosenMode) {
